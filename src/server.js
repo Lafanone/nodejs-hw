@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const Port = process.env.Port || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -48,6 +48,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(Port, () => {
-  console.log(`Server is running on port ${Port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
