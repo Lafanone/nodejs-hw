@@ -13,7 +13,9 @@
   "author": "Oleksii Cherep <alex1998120850@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "celebrate": "^15.0.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
