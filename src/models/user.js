@@ -23,11 +23,10 @@ const userSchema = new mongoose.Schema(
   },
 );
 
-userSchema.pre('save', function (next) {
+userSchema.pre('save', async function () {
   if (!this.username) {
     this.username = this.email;
   }
-  next();
 });
 
 userSchema.methods.toJSON = function () {
