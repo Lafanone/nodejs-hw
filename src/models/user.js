@@ -17,16 +17,22 @@ const userSchema = new mongoose.Schema(
       required: true,
       minlength: 8,
     },
+    avatar: {
+      type: String,
+      required: false,
+      default: 'https://ac.goit.global/fullstack/react/default-avatar.jpg',
+    },
   },
   {
     timestamps: true,
   },
 );
 
-userSchema.pre('save', async function () {
+userSchema.pre('save', async function (next) {
   if (!this.username) {
     this.username = this.email;
   }
+  next();
 });
 
 userSchema.methods.toJSON = function () {
